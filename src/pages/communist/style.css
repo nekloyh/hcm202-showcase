@@ -1,0 +1,66 @@
+#communist_page {
+  background-image: url("/background/bgCommunist.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#hcm_quote {
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #communist_page {
+    background-attachment: scroll;
+  }
+}
+
+#hcm_quote {
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+}
+
+/* Added responsive image utilities */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Added responsive text utilities */
+@media (max-width: 640px) {
+  .responsive-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .responsive-text-md {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* Added 3D perspective utilities for book component */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-1 {
+  transform: rotateY(1deg);
+}
+
+.rotate-y-3 {
+  transform: rotateY(3deg);
+}
+
+.rotate-y-5 {
+  transform: rotateY(5deg);
+}

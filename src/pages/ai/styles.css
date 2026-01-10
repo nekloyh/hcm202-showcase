@@ -1,0 +1,47 @@
+#ai_page {
+  background-image: url("/background/bgCommunist.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+#chat_content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Firefox */
+#chat_content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.7) transparent;
+}
+
+/* Chrome, Edge, Safari */
+#chat_content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+#chat_content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#chat_content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+#chat_content::-webkit-scrollbar-thumb:hover {
+  background-color: #000;
+}
+
+#chat_content::-webkit-scrollbar-corner {
+  background: transparent;
+}

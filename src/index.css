@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Bungee&family=Bungee+Tint&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap");
+@import "tailwindcss";
+
+html {
+  min-height: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@layer utilities {
+  .font-bungee {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .font-bungee-tint {
+    font-family: "Bungee Tint", sans-serif;
+    font-style: normal;
+  }
+  .font-grenze {
+    font-family: "Grenze", serif;
+    font-style: normal;
+  }
+  .font-brygada {
+    font-family: "Brygada 1918", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  .font-dau-phay {
+    font-family: "Fleur De Leah", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+}

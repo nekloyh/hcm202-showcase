@@ -15,12 +15,10 @@ const HomePage = () => {
   const frame3Ref = useRef(null);
 
   useEffect(() => {
-    // Đợi elements render xong
     const timer = setTimeout(() => {
       const ctx = gsap.context(() => {
-        // FRAME 1 ANIMATIONS
-        const tl1 = gsap.timeline({
-          scrollTrigger: {
+        // Frame 1
+        const tl1 = gsap.timeline({scrollTrigger: {
             trigger: frame1Ref.current,
             start: "top top",
             end: "bottom top",
@@ -32,27 +30,9 @@ const HomePage = () => {
 
         // Animate elements ra khỏi màn hình khi scroll
         tl1
-          .to("#home_title", {
-            y: -200,
-            opacity: 0,
-            duration: 1,
-          })
-          .to(
-            "#anh_chien_si",
-            {
-              x: -window.innerWidth,
-              duration: 1,
-            },
-            0.3
-          )
-          .to(
-            "#anh_bac",
-            {
-              x: window.innerWidth,
-              duration: 1,
-            },
-            0.3
-          );
+          .to("#home_title", {y: -200, opacity: 0, duration: 1,})
+          .to("#anh_chien_si", {x: -window.innerWidth, duration: 1,}, 0.3)
+          .to("#anh_bac", {x: window.innerWidth, duration: 1,}, 0.3);
 
         // FRAME 2 ANIMATIONS - ENTER
         // Set initial states cho frame 2
@@ -228,16 +208,16 @@ const HomePage = () => {
           className="relative flex flex-col items-start justify-center p-20 w-3/5 z-20 gap-5"
         >
           <div className="w-full flex items-center justify-center">
-            <p className="font-bungee text-5xl text-yellow-500">QUÁ ĐỘ LÊN</p>
+            <p className="font-bungee text-5xl text-yellow-500">Tư tưởng</p>
           </div>
           <div className="w-full flex items-center justify-center text-red-600">
             <p id="gradient_text" className="font-bungee text-8xl">
-              CHỦ NGHĨA XÃ HỘI
+              HỒ CHÍ MINH
             </p>
           </div>
           <div className="w-full flex items-center justify-center text-red-600">
             <p className="font-bungee text-center text-3xl text-yellow-500">
-              Bỏ qua chế độ tư bản chủ nghĩa ở Việt Nam
+              về đảng cộng sản Việt Nam
             </p>
           </div>
         </div>

@@ -18,11 +18,9 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* Home */}
         <Route path="/" element={<HomePage />} />
         <Route path="/trang-chu" element={<HomePage />} />
 
-        {/* Nội dung chính */}
         <Route path="/qua-trinh-ra-doi" element={<CommunistPage />} />
         <Route path="/ai-chatbot" element={<AIPage />} />
         <Route path="/van-dung" element={<ApplicationPage />} />

@@ -4,8 +4,22 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
+}
+
+/* Mobile fix for background-attachment */
+@media (max-width: 768px) {
+  .home-page {
+    background-attachment: scroll;
+  }
+}
+
+/* Support for dynamic viewport */
+@supports (height: 100dvh) {
+  .home-page {
+    min-height: 100dvh;
+  }
 }
 
 #gradient_text {
@@ -15,4 +29,9 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }

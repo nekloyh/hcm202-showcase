@@ -44,16 +44,24 @@ export default function Header() {
     setMobileMenuOpen(false);
   };
 
+  const isHomePage = location.pathname === "/" || location.pathname === "/trang-chu";
+  const textColorClass = isHomePage ? "text-white" : "text-gray-800";
+  const buttonBgClass = isHomePage 
+    ? "backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20" 
+    : "backdrop-blur-md bg-white/40 border border-black/5 hover:bg-black/5";
+    
+  const headerBgClass = scrolled
+    ? isHomePage 
+      ? "py-2 backdrop-blur-xl bg-white/10 border-b border-white/20 shadow-lg"
+      : "py-2 backdrop-blur-xl bg-white/70 border-b border-gray-200/50 shadow-sm"
+    : "py-4 bg-transparent";
+
   return (
     <>
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled
-            ? "py-2 backdrop-blur-xl bg-white/10 border-b border-white/20 shadow-lg"
-            : "py-4 bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${headerBgClass}`}
       >
         <nav className="flex justify-between items-center gap-4 max-w-7xl mx-auto px-4 md:px-6">
           {/* Desktop Navigation */}
@@ -74,7 +82,7 @@ export default function Header() {
                     ${
                       isActive
                         ? "bg-gradient-to-r from-[#DA251D] to-[#8B0000] text-[#FFCD00] shadow-lg"
-                        : "backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20"
+                        : `${buttonBgClass} ${textColorClass}`
                     }`}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -86,12 +94,12 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center justify-between w-full">
-            <span className="font-bungee text-white text-lg">HCM202</span>
+            <span className={`font-bungee text-lg ${isHomePage ? "text-white" : "text-[#DA251D]"}`}>HCM202</span>
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg backdrop-blur-md bg-white/10 border border-white/20 text-white
-                focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
+              className={`p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400
+                  ${buttonBgClass} ${textColorClass}`}
               aria-label={mobileMenuOpen ? "Đóng menu" : "Mở menu"}
               aria-expanded={mobileMenuOpen}
             >

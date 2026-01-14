@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { TrongDong3D } from "../../components/models/TrongDong3D";
 import "./style.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -207,16 +206,18 @@ const HomePage = () => {
           id="home_title"
           className="relative flex flex-col items-start justify-center p-20 w-3/5 z-20 gap-5"
         >
-          <div className="w-full flex items-center justify-center">
-            <p className="font-bungee text-5xl text-yellow-500">Tư tưởng</p>
-          </div>
-          <div className="w-full flex items-center justify-center text-red-600">
-            <p id="gradient_text" className="font-bungee text-8xl">
-              HỒ CHÍ MINH
+          <div className="w-full flex items-center justify-center text-(--color-red-flag)">
+            <p id="gradient_text" className="font-bungee text-8xl drop-shadow-lg pt-4 pb-1">
+              CHỦ NGHĨA XÃ HỘI
             </p>
           </div>
-          <div className="w-full flex items-center justify-center text-red-600">
-            <p className="font-bungee text-center text-3xl text-yellow-500">
+          <div className="w-full flex items-center justify-center">
+            <p className="font-bungee text-5xl text-white drop-shadow-[0_4px_4px_rgba(218,37,29,0.8)]">
+              TÌM HIỂU LÝ LUẬN QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
+            </p>
+          </div>
+          <div className="w-full flex items-center justify-center">
+            <p className="font-bungee text-center text-3xl text-white drop-shadow-[0_4px_4px_rgba(218,37,29,0.8)]">
               về đảng cộng sản Việt Nam
             </p>
           </div>
@@ -256,23 +257,28 @@ const HomePage = () => {
       >
         <div
           id="quote_container"
-          className="mt-30 w-full h-72 flex bg-[#5D0404] border-t-2 border-b-2 border-white justify-end"
+          className="mt-30 w-full h-72 flex bg-[var(--color-brown-heritage)] border-t-2 border-b-2 border-white justify-end"
         >
           <div
             id="quote_text"
             className="h-full w-3/5 flex flex-col justify-between p-10"
           >
             <div className="flex items-end text-white">
-              <p className="font-dau-phay text-9xl">"</p>
-              <p className="font-brygada text-5xl">
-                "Chủ nghĩa xã hội là làm sao cho dân giàu, nước mạnh, mọi người hạnh phúc."
+              <p className="font-serif italic text-9xl leading-none opacity-50">
+                "
+              </p>
+              <p className="font-serif-accent text-5xl italic leading-tight">
+                "Chủ nghĩa xã hội là làm sao cho dân giàu, nước mạnh, mọi người
+                hạnh phúc."
               </p>
             </div>
             <div
               id="quote_author"
               className="w-full flex items-center justify-end text-white"
             >
-              <p className="font-brygada font-light">- Chủ tịch Hồ Chí Minh</p>
+              <p className="font-serif-accent font-light italic mt-4">
+                - Chủ tịch Hồ Chí Minh
+              </p>
             </div>
           </div>
         </div>
@@ -298,7 +304,7 @@ const HomePage = () => {
         {/* White/Light section - bottom part with diagonal cut */}
         <div
           id="white_section"
-          className="absolute bottom-0 left-0 w-full h-3/5 bg-gray-100 z-1"
+          className="absolute bottom-0 left-0 w-full h-3/5 bg-[var(--color-beige-paper)] z-1"
           style={{
             clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0% 100%)",
           }}
@@ -312,45 +318,39 @@ const HomePage = () => {
           <div
             onClick={() => navigate("/qua-trinh-ra-doi")}
             id="nav_1"
-            className="bg-red-800 hover:bg-red-500 cursor-pointer text-white px-6 py-3 rounded-full flex items-center gap-3 min-w-96"
+            className="bg-[var(--color-red-flag)] hover:bg-[#B31B1B] transition-colors cursor-pointer text-white px-6 py-3 rounded-full flex items-center gap-3 min-w-96 shadow-lg border border-yellow-400/30"
           >
-            <div className="bg-yellow-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
+            <div className="bg-[var(--color-yellow-star)] text-[var(--color-red-flag)] rounded-full w-8 h-8 flex items-center justify-center font-black font-bungee">
               1
             </div>
-            <span className="font-bold text-sm">
+            <span className="font-bold text-sm font-inter">
               LÝ LUẬN QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
             </span>
           </div>
           <div
             onClick={() => navigate("/van-dung")}
             id="nav_2"
-            className="bg-red-800 hover:bg-red-500 cursor-pointer text-white px-6 py-3 rounded-full flex items-center gap-3 min-w-96"
+            className="bg-[var(--color-red-flag)] hover:bg-[#B31B1B] transition-colors cursor-pointer text-white px-6 py-3 rounded-full flex items-center gap-3 min-w-96 shadow-lg border border-yellow-400/30"
           >
-            <div className="bg-yellow-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
+            <div className="bg-[var(--color-yellow-star)] text-[var(--color-red-flag)] rounded-full w-8 h-8 flex items-center justify-center font-black font-bungee">
               2
             </div>
-            <span className="font-bold text-sm">
+            <span className="font-bold text-sm font-inter">
               VẬN DỤNG TRONG PHÁT TRIỂN HIỆN NAY
             </span>
           </div>
           <div
             onClick={() => navigate("/ai-chatbot")}
             id="nav_3"
-            className="bg-red-800 hover:bg-red-500 cursor-pointer text-white px-6 py-3 rounded-full flex items-center gap-3 min-w-96"
+            className="bg-[var(--color-red-flag)] hover:bg-[#B31B1B] transition-colors cursor-pointer text-white px-6 py-3 rounded-full flex items-center gap-3 min-w-96 shadow-lg border border-yellow-400/30"
           >
-            <div className="bg-yellow-500 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold">
+            <div className="bg-[var(--color-yellow-star)] text-[var(--color-red-flag)] rounded-full w-8 h-8 flex items-center justify-center font-black font-bungee">
               3
             </div>
-            <span className="font-bold text-sm">TRỢ LÝ AI VỀ QUÁ ĐỘ CNXH</span>
+            <span className="font-bold text-sm font-inter">
+              TRỢ LÝ AI VỀ QUÁ ĐỘ CNXH
+            </span>
           </div>
-        </div>
-
-        {/* 3D Model - positioned on the left */}
-        <div
-          id="model"
-          className="absolute top-1/2 left-20 transform -translate-y-1/2 w-1/2 h-screen z-10"
-        >
-          <TrongDong3D />
         </div>
 
         {/* Main Content Text */}
@@ -358,15 +358,21 @@ const HomePage = () => {
           id="description"
           className="absolute bottom-32 right-20 text-right z-20"
         >
-          <h3 className="text-red-800 font-bold text-lg mb-2">
+          <h3 className="text-[var(--color-red-flag)] font-bold font-bungee text-xl mb-2 tracking-wide">
             FPTU HCM202 STUDENTS GROUP
           </h3>
-          <h1 className="text-red-900 font-bold text-6xl mb-6">ĐỀ TÀI MỚI</h1>
-          <p className="text-yellow-600 font-medium text-lg max-w-2xl leading-relaxed">
+          <h1 className="text-[#8B0000] font-black font-display text-7xl mb-6">
+            ĐỀ TÀI MỚI
+          </h1>
+          <p className="text-[var(--color-charcoal)] font-body font-medium text-lg max-w-2xl leading-relaxed ml-auto">
             Vì sao con đường quá độ lên chủ nghĩa xã hội ở Việt Nam được coi là
-            bỏ qua chế độ tư bản chủ nghĩa? Khám phá cách Hồ Chí Minh lý giải
-            “bỏ qua” không phải phủ định sạch trơn, mà là lựa chọn tất yếu dựa
-            trên điều kiện lịch sử, kinh tế, xã hội của Việt Nam.
+            <span className="text-[var(--color-red-flag)] font-bold">
+              {" "}
+              "bỏ qua"{" "}
+            </span>
+            chế độ tư bản chủ nghĩa? Khám phá cách Hồ Chí Minh lý giải “bỏ qua”
+            không phải phủ định sạch trơn, mà là lựa chọn tất yếu dựa trên điều
+            kiện lịch sử, kinh tế, xã hội của Việt Nam.
           </p>
         </div>
       </div>

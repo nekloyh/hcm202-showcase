@@ -75,26 +75,24 @@ body {
     font-family: "Bungee Tint", sans-serif;
     font-style: normal;
   }
-  .font-grenze {
-    font-family: "Grenze", serif;
-    font-style: normal;
-  }
-  .font-brygada {
-    font-family: "Brygada 1918", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-  }
-  .font-dau-phay {
-    font-family: "Fleur De Leah", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-  /* NEW: Modern readable fonts */
+  
+  /* Modern readable fonts */
   .font-inter {
     font-family: "Inter", system-ui, sans-serif;
   }
   .font-instrument {
     font-family: "Instrument Sans", system-ui, sans-serif;
+  }
+  
+  /* Semantic Font Classes */
+  .font-display {
+    font-family: "Bungee", sans-serif;
+  }
+  .font-body {
+    font-family: "Instrument Sans", system-ui, sans-serif;
+  }
+  .font-serif-accent {
+    font-family: "Brygada 1918", serif;
   }
   
   /* Neo-Brutalist Color Utilities */
@@ -175,5 +173,19 @@ body {
       animation: none !important;
       transition: none !important;
     }
+  }
+
+  /* Text Shadows for Contrast */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .text-shadow-strong {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  }
+  .text-shadow-red {
+    text-shadow: 2px 2px 0px var(--color-red-flag);
+  }
+  .text-outline-dark {
+    -webkit-text-stroke: 1px rgba(0,0,0,0.5);
   }
 }

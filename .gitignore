@@ -19,5 +19,3 @@ dist-ssr
 .env.local
 
 ws.code-workspace
-
-public/

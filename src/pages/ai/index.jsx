@@ -1,6 +1,7 @@
 import { Send, Bot, User, Sparkles } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactMarkdown from "react-markdown";
 import { sendMessageToAI } from "../../services/aiService";
 import "./styles.css";
 
@@ -30,7 +31,9 @@ const AIResponse = ({ text }) => {
         <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-charcoal"></div>
 
         <h4 className="font-bungee text-red-flag text-sm mb-2 uppercase tracking-wide">AI TÈO</h4>
-        <p className="text-charcoal font-body leading-relaxed whitespace-pre-wrap">{text}</p>
+        <div className="ai-markdown text-charcoal font-body leading-relaxed">
+          <ReactMarkdown>{text}</ReactMarkdown>
+        </div>
       </div>
     </motion.div>
   );

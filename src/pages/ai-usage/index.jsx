@@ -1,105 +1,135 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Bot, 
-  FileText, 
-  Palette, 
-  Code, 
-  CheckCircle,
-  Cpu
+import {
+  Bot,
+  FileText,
+  Layout,
+  Search,
+  Cpu,
+  Sparkles,
+  ArrowRight,
+  Terminal
 } from "lucide-react";
 import "./styles.css";
 
 const tools = [
   {
-    name: "ChatGPT",
-    icon: Bot,
-    color: "text-green-600",
-    bg: "bg-green-50",
-    purpose: [
-      "Tóm tắt, đối chiếu giáo trình Tư tưởng Hồ Chí Minh và các văn kiện Đảng về thời kỳ quá độ lên CNXH.",
-      "Gợi ý cấu trúc nội dung trang web, sắp xếp mục lục lý luận – thực tiễn.",
-      "Kiểm tra logic, phát hiện chỗ thiếu dẫn giải khi trình bày khái niệm \"bỏ qua chế độ tư bản chủ nghĩa\"."
+    category: "RESEARCH & DATA",
+    name: "Nghiên cứu & Tổng hợp",
+    tools: ["ChatGPT 4o", "NoteGPT"],
+    icon: Search,
+    description: [
+      "Phân tích, đối chiếu quan điểm giáo trình & văn kiện Đảng.",
+      "Tóm tắt video bài giảng, trích xuất luận điểm cốt lõi.",
+      "Kiểm tra chéo (Cross-check) kiến thức lịch sử."
     ],
-    images: ["/images/ai-usage/1.jpg", "/images/ai-usage/2.jpg"]
+    images: ["/images/ai-usage/notegpt.png", "/images/ai-usage/gpt_2.png", "/images/ai-usage/gpt_1.png"],
+    color: "bg-green-100",
+    border: "border-green-800"
   },
   {
-    name: "NoteGPT.io",
-    icon: FileText,
-    color: "text-purple-600",
-    bg: "bg-purple-50",
-    purpose: [
-      "Transcript bài giảng, toạ đàm học thuật về quá độ lên CNXH để trích xuất luận điểm chính."
-    ],
-    images: ["/images/ai-usage/6.jpg"]
-  },
-  {
-    name: "v0.dev",
-    icon: Palette,
-    color: "text-gray-800",
-    bg: "bg-gray-50",
-    purpose: [
-      "Phác thảo ý tưởng UI/UX cho các section lý luận – vận dụng – chatbot."
-    ],
-    images: ["/images/ai-usage/8.jpg"]
-  },
-  {
-    name: "Groq Cloud",
+    category: "CHATBOT OPERATION",
+    name: "Vận hành Chatbot Tèo",
+    tools: ["Google AI Studio", "Groq Cloud"],
     icon: Cpu,
-    color: "text-orange-600",
-    bg: "bg-orange-50",
-    purpose: [
-      "Cung cấp API key cho chatbot \"Tèo\" để trả lời về con đường quá độ lên CNXH."
+    description: [
+      "Fine-tune Gemini 1.5 Flash với dữ liệu Tư tưởng HCM.",
+      "Tối ưu độ trễ phản hồi (<1s) với Groq LPU.",
+      "Xây dựng Persona 'Tèo' gần gũi, học thuật."
     ],
-    images: ["/images/ai-usage/9.jpg"]
+    images: ["/images/ai-usage/groq.png", "/images/ai-usage/google_studio.png"],
+    color: "bg-orange-100",
+    border: "border-orange-800"
+  },
+  {
+    category: "WEB DEVELOPMENT",
+    name: "Xây dựng Website",
+    tools: ["Gemini Advanced"],
+    icon: Layout,
+    description: [
+      "Generate code UI React/Tailwind chuẩn Neo-Brutalist.",
+      "Tối ưu Responsive & Animation (Framer Motion).",
+      "Debug logic & Refactor code base."
+    ],
+    images: ["/images/ai-usage/gemini_1.png", "/images/ai-usage/gemini_2.png"],
+    color: "bg-blue-100",
+    border: "border-blue-800"
   }
 ];
 
-const ToolCard = ({ tool, index }) => {
-  const Icon = tool.icon;
-  
+const ToolCard = ({ item, index }) => {
+  const Icon = item.icon;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.2 }}
       viewport={{ once: true }}
-      className="bg-white/80 backdrop-blur-md border border-[var(--color-border-light)] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+      className="relative group"
     >
-      <div className="p-6 md:p-8">
-        <div className="flex items-center gap-4 mb-6">
-          <div className={`p-3 rounded-xl ${tool.bg} ${tool.color}`}>
-            <Icon size={32} strokeWidth={2} />
+      {/* Background Shadow Layer */}
+      <div className="absolute inset-0 bg-charcoal translate-x-3 translate-y-3 rounded-none"></div>
+
+      {/* Main Card Content */}
+      <div className={`relative bg-white border-4 border-charcoal p-6 md:p-8 h-full flex flex-col justify-between transition-transform duration-200 group-hover:-translate-x-1 group-hover:-translate-y-1`}>
+
+        {/* Header */}
+        <div className="flex justify-between items-start mb-6 border-b-4 border-charcoal pb-4">
+          <div>
+            <span className="inline-block bg-charcoal text-yellow-star px-2 py-1 font-mono text-xs font-bold mb-2">
+              {item.category}
+            </span>
+            <h3 className="font-bungee text-2xl md:text-3xl text-charcoal leading-none uppercase">
+              {item.name}
+            </h3>
           </div>
-          <h2 className="text-2xl font-bold font-body text-gray-800 tracking-tight">
-            {tool.name}
-          </h2>
+          <div className={`p-3 border-2 border-charcoal ${item.color} shadow-[4px_4px_0px_0px_#1A1A1A]`}>
+            <Icon size={32} strokeWidth={2} className="text-charcoal" />
+          </div>
         </div>
 
-        <div className="mb-6">
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Mục đích sử dụng</h3>
-          <ul className="space-y-3">
-            {tool.purpose.map((line, i) => (
-              <li key={i} className="flex items-start gap-3 text-gray-700 font-body leading-relaxed">
-                <CheckCircle size={18} className="text-[var(--color-yellow-star)] mt-1 shrink-0 bg-black rounded-full p-0.5" />
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
+        {/* Content */}
+        <div className="space-y-6">
+          <div>
+            <h4 className="font-bold font-inter text-sm text-charcoal/60 uppercase mb-2">TOOLS USED:</h4>
+            <div className="flex flex-wrap gap-2">
+              {item.tools.map(t => (
+                <span key={t} className="px-3 py-1 border-2 border-charcoal bg-off-white font-bold text-sm shadow-[2px_2px_0px_0px_#DA251D]">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-bold font-inter text-sm text-charcoal/60 uppercase mb-2">PROCESS:</h4>
+            <ul className="space-y-2">
+              {item.description.map((desc, i) => (
+                <li key={i} className="flex items-start gap-2 font-inter text-charcoal leading-snug">
+                  <ArrowRight size={16} className="mt-1 flex-shrink-0 text-red-flag" />
+                  <span>{desc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Images Grid */}
+          <div className="pt-4 border-t-2 border-dashed border-charcoal">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {item.images.map((img, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.1, rotate: -2 }}
+                  className="aspect-video border-2 border-charcoal overflow-hidden shadow-sm relative group/img cursor-zoom-in bg-gray-100"
+                >
+                  <img src={img} alt="Evidence" className="w-full h-full object-cover filter grayscale group-hover/img:grayscale-0 transition-all duration-300" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {tool.images && tool.images.length > 0 && (
-          <div className="mt-6">
-             <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Minh họa thực tế</h3>
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-               {tool.images.map((img, i) => (
-                 <div key={i} className="rounded-lg overflow-hidden border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
-                   <img src={img} alt={`${tool.name} usage`} className="w-full h-auto hover:scale-105 transition-transform duration-500" />
-                 </div>
-               ))}
-             </div>
-          </div>
-        )}
       </div>
     </motion.div>
   );
@@ -107,53 +137,64 @@ const ToolCard = ({ tool, index }) => {
 
 const AiUsagePage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-20 px-4 md:px-8 bg-[#F5F5DC]">
-      <div className="max-w-5xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+    <div className="min-h-screen bg-beige-paper bg-grid-pattern pt-24 pb-20 px-4 md:px-8 overflow-x-hidden">
+
+      {/* Header Section */}
+      <div className="max-w-6xl mx-auto mb-20 text-center relative">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="inline-block bg-yellow-star border-4 border-charcoal px-6 py-2 shadow-[8px_8px_0px_0px_#DA251D] transform -rotate-2 mb-8 hover:rotate-0 transition-transform"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[var(--color-red-flag)] text-[var(--color-yellow-star)] font-bold text-sm mb-4 uppercase tracking-wider shadow-sm">
-            Công nghệ hỗ trợ
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black font-display text-[var(--color-charcoal)] mb-6 uppercase">
-            AI Usage <br/>
-            <span className="text-[var(--color-red-flag)]">Cho đề tài nghiên cứu</span>
-          </h1>
-          <p className="text-xl text-gray-600 font-body max-w-2xl mx-auto">
-            Cách chúng tôi tận dụng sức mạnh của trí tuệ nhân tạo để nâng cao chất lượng nghiên cứu về thời kỳ quá độ lên CNXH.
-          </p>
+          <span className="font-bungee text-2xl text-charcoal">AI ASSISTED PROJECT</span>
         </motion.div>
 
-        <div className="space-y-8">
-          {tools.map((tool, index) => (
-            <ToolCard key={tool.name} tool={tool} index={index} />
-          ))}
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-display text-charcoal uppercase leading-[0.9] mb-6">
+          CÔNG CỤ <br />
+          <span className="text-stroke-red text-transparent relative">
+            HỖ TRỢ
+            <Sparkles className="absolute -top-8 -right-8 text-yellow-star w-16 h-16 animate-spin-slow" strokeWidth={3} />
+          </span>
+        </h1>
+
+        <p className="font-inter text-xl md:text-2xl text-charcoal/80 max-w-3xl mx-auto border-l-8 border-charcoal pl-6 text-left md:ml-auto md:text-center md:border-none md:pl-0">
+          Minh bạch quy trình sử dụng Trí tuệ nhân tạo trong nghiên cứu và phát triển dự án.
+        </p>
+      </div>
+
+      {/* Tools Section */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16">
+        {tools.map((item, index) => (
+          <div key={item.name} className={index === 2 ? "lg:col-span-2 lg:w-2/3 lg:mx-auto" : ""}>
+            <ToolCard item={item} index={index} />
+          </div>
+        ))}
+      </div>
+
+      {/* Footer Disclaimer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto mt-24 bg-charcoal text-off-white p-8 md:p-12 border-4 border-yellow-star relative overflow-hidden"
+      >
+        <div className="absolute -right-10 -bottom-10 opacity-20">
+          <Terminal size={200} />
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-20 p-8 md:p-12 bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl border-l-8 border-[var(--color-red-flag)] relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
-            <Bot size={200} />
+        <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex-shrink-0 p-4 border-2 border-white rounded-full">
+            <Sparkles size={40} className="text-yellow-star" />
           </div>
-          
-          <h3 className="text-2xl font-bold font-display text-[var(--color-red-flag)] mb-4">
-            Cam kết sử dụng AI có trách nhiệm
-          </h3>
-          <p className="text-lg text-gray-700 font-body leading-relaxed text-justify relative z-10">
-            Nhóm cam kết dùng AI như công cụ hỗ trợ tra cứu, tóm tắt, kiểm chứng và gợi ý cấu trúc, luôn đối chiếu với nguồn chính thống (giáo trình Tư tưởng Hồ Chí Minh, Văn kiện Đảng, tạp chí lý luận). 
-            <span className="font-bold text-black block mt-2">
-              Không dùng AI để tạo thông tin chưa xác thực hay suy diễn ngoài phạm vi học thuật.
-            </span>
-            Nội dung cuối cùng được biên tập thủ công, đảm bảo tính chính xác, khách quan và phù hợp chuẩn mực học thuật.
-          </p>
-        </motion.div>
-      </div>
+          <div>
+            <h3 className="font-bungee text-2xl text-yellow-star mb-2 uppercase">Cam kết học thuật</h3>
+            <p className="font-inter text-gray-300 leading-relaxed text-justify">
+              Chúng tôi khẳng định AI chỉ đóng vai trò là <strong>công cụ hỗ trợ</strong> (tra cứu, gợi ý, tối ưu hóa). Mọi nội dung chuyên môn đều được kiểm chứng nghiêm ngặt dựa trên Giáo trình Tư tưởng Hồ Chí Minh và Văn kiện Đảng. Sự sáng tạo và tư duy phản biện của con người là yếu tố quyết định cuối cùng.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
     </div>
   );
 };

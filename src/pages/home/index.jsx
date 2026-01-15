@@ -28,8 +28,8 @@ const HomePage = () => {
                 <p className="font-mono text-[10px] lg:text-xs mt-2 text-yellow-star">-- FPT_UNIVERSITY_PROJECT</p>
               </div>
               <div className="absolute bottom-4 right-4 lg:bottom-8 lg:right-8 z-20 text-right pointer-events-none">
-                <h1 className="font-display font-black text-5xl lg:text-8xl uppercase text-white leading-[0.85] tracking-tighter drop-shadow-lg">
-                  CHỦ NGHĨA<br /><span className="text-red-flag text-stroke-white">XÃ HỘI</span>
+                <h1 className="font-display font-black text-5xl lg:text-8xl uppercase text-yellow-star leading-[0.85] tracking-tighter drop-shadow-lg">
+                  CHỦ NGHĨA<br /><span className="text-charcoal text-stroke-white">XÃ HỘI</span>
                 </h1>
               </div>
             </motion.div>

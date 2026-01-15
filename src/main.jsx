@@ -5,8 +5,8 @@ import "./index.css";
 
 import HomePage from "./pages/home/index.jsx";
 import Header from "./components/layout/Header.jsx";
-import CommunistPage from "./pages/communist/index.jsx";
-import ApplicationPage from "./pages/application/index.jsx";
+import SocialismPage from "./pages/socialism/index.jsx";
+import TransitionPeriodPage from "./pages/transition-period/index.jsx";
 import AIChatboxPage from "./pages/ai/index.jsx";
 import AiUsagePage from "./pages/ai-usage/index.jsx";
 import InformationsPage from "./pages/informations/index.jsx";
@@ -18,8 +18,8 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/trang-chu" element={<HomePage />} />
-        <Route path="/qua-trinh-ra-doi" element={<CommunistPage />} />
-        <Route path="/van-dung" element={<ApplicationPage />} />
+        <Route path="/chu-nghia-xa-hoi" element={<SocialismPage />} />
+        <Route path="/thoi-ki-qua-do" element={<TransitionPeriodPage />} />
         <Route path="/ai-chatbot" element={<AIChatboxPage />} />
         <Route path="/ai-usage" element={<AiUsagePage />} />
         <Route path="/informations" element={<InformationsPage />} />

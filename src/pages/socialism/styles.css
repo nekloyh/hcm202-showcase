@@ -1,0 +1,33 @@
+.bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.mask-linear-fade {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.text-stroke-charcoal {
+    -webkit-text-stroke: 2px #1A1A1A;
+    color: transparent;
+}
+
+/* Custom scrollbar for horizontal containers */
+.overflow-x-auto::-webkit-scrollbar {
+    height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #1A1A1A;
+    border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: #DA251D;
+}

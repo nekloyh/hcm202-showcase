@@ -19,24 +19,12 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { href: "/trang-chu", label: "Trang chủ" },
-    {
-      href: "/qua-trinh-ra-doi",
-      label: "Quá độ lên CNXH: Lý luận",
-    },
-    { href: "/van-dung", label: "Vận dụng thực tiễn hiện nay" },
-    {
-      href: "/ai-chatbot",
-      label: "Trợ lý AI về quá độ CNXH",
-    },
-    {
-      href: "/ai-usage",
-      label: "AI Usage cho đề tài mới",
-    },
-    {
-      href: "/informations",
-      label: "Thông tin dự án & nguồn tham khảo",
-    },
+    { name: "Trang chủ", icon: "Home", path: "/" },
+    { name: "Chủ nghĩa Xã hội", icon: "Star", path: "/chu-nghia-xa-hoi" },
+    { name: "Thời kì quá độ", icon: "Plane", path: "/thoi-ki-qua-do" },
+    { name: "Trợ lý ảo", icon: "MessageSquare", path: "/ai-chatbot" },
+    { name: "Hướng dẫn AI", icon: "Book", path: "/ai-usage" },
+    { name: "Thông tin dự án", icon: "Info", path: "/informations" },
   ];
 
   const handleNavigate = (href) => {
@@ -45,63 +33,63 @@ export default function Header() {
   };
 
   const isHomePage = location.pathname === "/" || location.pathname === "/trang-chu";
-  const textColorClass = isHomePage ? "text-white" : "text-gray-800";
-  const buttonBgClass = isHomePage 
-    ? "backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20" 
-    : "backdrop-blur-md bg-white/40 border border-black/5 hover:bg-black/5";
-    
-  const headerBgClass = scrolled
-    ? isHomePage 
-      ? "py-2 backdrop-blur-xl bg-white/10 border-b border-white/20 shadow-lg"
-      : "py-2 backdrop-blur-xl bg-white/70 border-b border-gray-200/50 shadow-sm"
-    : "py-4 bg-transparent";
+
+  // Neo-Brutalist Stying Constants
+  const headerBgClass = "bg-beige-paper border-b-2 border-charcoal";
+  const headerShadowClass = scrolled ? "shadow-md" : "";
 
   return (
     <>
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${headerBgClass}`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${headerBgClass} ${headerShadowClass}`}
       >
-        <nav className="flex justify-between items-center gap-4 max-w-7xl mx-auto px-4 md:px-6">
+        <nav className="flex justify-between items-center h-20 max-w-7xl mx-auto px-4 md:px-6">
+
+          {/* Logo / Brand */}
+          <div
+            onClick={() => handleNavigate("/")}
+            className="font-bungee text-2xl text-red-flag cursor-pointer select-none hover:scale-105 transition-transform"
+          >
+            HCM202
+            <span className="text-charcoal text-sm font-inter ml-2 tracking-tighter">SHOWCASE</span>
+          </div>
+
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex justify-around items-center gap-3 w-full">
+          <div className="hidden lg:flex items-center gap-2">
             {navItems.map((item) => {
-              let isActive = location.pathname === item.href;
-              if (location.pathname === "/" && item.href === "/trang-chu") {
+              let isActive = location.pathname === item.path;
+              if (location.pathname === "/" && item.path === "/trang-chu") {
                 isActive = true;
               }
               return (
                 <motion.button
-                  key={item.href}
-                  onClick={() => handleNavigate(item.href)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className={`flex-1 px-4 py-3 rounded-full font-inter text-sm transition-all duration-200
-                    focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2
-                    ${
-                      isActive
-                        ? "bg-gradient-to-r from-[#DA251D] to-[#8B0000] text-[#FFCD00] shadow-lg"
-                        : `${buttonBgClass} ${textColorClass}`
-                    }`}
-                  aria-current={isActive ? "page" : undefined}
+                  key={item.path}
+                  onClick={() => handleNavigate(item.path)}
+                  whileHover={{ y: -2, x: -2, boxShadow: "4px 4px 0px 0px #1A1A1A" }}
+                  whileTap={{ y: 0, x: 0, boxShadow: "0px 0px 0px 0px #1A1A1A" }}
+                  className={`
+                    px-4 py-2 rounded-md font-bungee text-xs transition-all duration-100 border-2 border-charcoal
+                    ${isActive
+                      ? "bg-red-flag text-yellow-star shadow-[2px_2px_0px_0px_#1A1A1A]"
+                      : "bg-off-white text-charcoal hover:bg-white"
+                    }
+                  `}
                 >
-                  <span className="block truncate font-medium">{item.label}</span>
+                  {item.name}
                 </motion.button>
               );
             })}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center justify-between w-full">
-            <span className={`font-bungee text-lg ${isHomePage ? "text-white" : "text-[#DA251D]"}`}>HCM202</span>
+          <div className="lg:hidden flex items-center">
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400
-                  ${buttonBgClass} ${textColorClass}`}
+              className="p-2 bg-red-flag border-2 border-charcoal text-white rounded-md shadow-[3px_3px_0px_0px_#1A1A1A]"
               aria-label={mobileMenuOpen ? "Đóng menu" : "Mở menu"}
-              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -109,53 +97,55 @@ export default function Header() {
         </nav>
       </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="fixed inset-0 z-40 lg:hidden"
           >
             {/* Backdrop */}
             <div
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-charcoal/80 backdrop-grayscale"
               onClick={() => setMobileMenuOpen(false)}
             />
 
-            {/* Menu Content */}
+            {/* Menu Content - Drawer Style */}
             <motion.nav
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-[#1A1A1A] to-[#0D0D0D] 
-                border-l border-white/10 shadow-2xl p-6 pt-20"
+              transition={{ type: "tween", duration: 0.3 }}
+              className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-beige-paper border-l-4 border-charcoal shadow-2xl p-6 pt-24"
             >
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
+                <div className="border-b-4 border-charcoal pb-4 mb-4">
+                  <h3 className="font-bungee text-2xl text-red-flag">MENU</h3>
+                </div>
+
                 {navItems.map((item, index) => {
-                  let isActive = location.pathname === item.href;
-                  if (location.pathname === "/" && item.href === "/trang-chu") {
+                  let isActive = location.pathname === item.path;
+                  if (location.pathname === "/" && item.path === "/trang-chu") {
                     isActive = true;
                   }
                   return (
                     <motion.button
-                      key={item.href}
+                      key={item.path}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      onClick={() => handleNavigate(item.href)}
-                      className={`w-full px-4 py-4 rounded-xl font-inter text-left text-sm transition-all
-                        focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400
-                        ${
-                          isActive
-                            ? "bg-gradient-to-r from-[#DA251D] to-[#8B0000] text-[#FFCD00]"
-                            : "bg-white/5 text-white hover:bg-white/10 border border-white/10"
-                        }`}
+                      onClick={() => handleNavigate(item.path)}
+                      className={`
+                        w-full px-4 py-4 font-inter font-bold text-left text-sm border-2 border-charcoal transition-all
+                        ${isActive
+                          ? "bg-red-flag text-yellow-star shadow-[4px_4px_0px_0px_#1A1A1A] translate-x-[-2px] translate-y-[-2px]"
+                          : "bg-white text-charcoal shadow-[2px_2px_0px_0px_#1A1A1A] hover:bg-gray-50"
+                        }
+                      `}
                     >
-                      {item.label}
+                      {item.name}
                     </motion.button>
                   );
                 })}
@@ -167,3 +157,4 @@ export default function Header() {
     </>
   );
 }
+

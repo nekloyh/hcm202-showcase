@@ -6,15 +6,15 @@ import "./styles.css";
 
 const AITalkingAvatar = () => {
   return (
-    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-red-flag)] to-[#8B0000] shadow-lg border-2 border-[var(--color-yellow-star)]">
-      <Bot className="text-white w-6 h-6" />
+    <div className="w-12 h-12 flex items-center justify-center bg-red-flag border-2 border-charcoal shadow-[2px_2px_0px_0px_#1A1A1A]">
+      <Bot className="text-yellow-star w-7 h-7" />
     </div>
   );
 };
 
 const AIResponse = ({ text }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       className="w-full flex gap-4 mb-6"
@@ -22,8 +22,15 @@ const AIResponse = ({ text }) => {
       <div className="shrink-0 mt-1">
         <AITalkingAvatar />
       </div>
-      <div className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl rounded-tl-sm shadow-sm border border-black/5 max-w-[85%] md:max-w-[75%]">
-        <p className="text-gray-800 font-body leading-relaxed whitespace-pre-wrap">{text}</p>
+      <div className="bg-white p-5 border-2 border-charcoal shadow-[4px_4px_0px_0px_#1A1A1A] max-w-[85%] md:max-w-[75%] relative">
+        {/* Decorative corner */}
+        <div className="absolute -top-1 -left-1 w-2 h-2 bg-charcoal"></div>
+        <div className="absolute -top-1 -right-1 w-2 h-2 bg-charcoal"></div>
+        <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-charcoal"></div>
+        <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-charcoal"></div>
+
+        <h4 className="font-bungee text-red-flag text-sm mb-2 uppercase tracking-wide">AI TÈO</h4>
+        <p className="text-charcoal font-body leading-relaxed whitespace-pre-wrap">{text}</p>
       </div>
     </motion.div>
   );
@@ -31,16 +38,22 @@ const AIResponse = ({ text }) => {
 
 const UserPrompt = ({ text }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       className="w-full flex items-center justify-end gap-3 mb-6"
     >
-      <div className="p-4 bg-[var(--color-brown-heritage)] text-white rounded-2xl rounded-tr-sm shadow-md max-w-[80%] md:max-w-[70%]">
+      <div className="p-5 bg-brown-heritage text-white border-2 border-charcoal shadow-[4px_4px_0px_0px_#1A1A1A] max-w-[80%] md:max-w-[70%] text-right relative">
+        {/* Decorative corner */}
+        <div className="absolute -top-1 -left-1 w-2 h-2 bg-yellow-star"></div>
+        <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-star"></div>
+        <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-yellow-star"></div>
+        <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-yellow-star"></div>
+
         <p className="break-words font-body leading-relaxed">{text}</p>
       </div>
-      <div className="shrink-0 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center border-2 border-white shadow-sm">
-        <User className="text-gray-500 w-5 h-5" />
+      <div className="shrink-0 w-12 h-12 bg-beige-paper flex items-center justify-center border-2 border-charcoal shadow-[2px_2px_0px_0px_#1A1A1A]">
+        <User className="text-charcoal w-6 h-6" />
       </div>
     </motion.div>
   );
@@ -115,25 +128,35 @@ const AIPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-10 px-4 md:px-8 bg-[#F5F5DC] flex flex-col items-center">
-      <div className="w-full max-w-4xl flex-1 flex flex-col h-[calc(100vh-140px)]">
-        
+    <div className="min-h-screen pt-28 pb-10 px-4 md:px-8 bg-beige-paper flex flex-col items-center">
+      <div className="w-full max-w-5xl flex-1 flex flex-col h-[calc(100vh-160px)]">
+
         {/* Header Section */}
-        <div className="text-center mb-6 shrink-0">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/50 backdrop-blur-md border border-[var(--color-red-flag)]/20 text-[var(--color-red-flag)] font-bold text-sm mb-2 shadow-sm">
-            <Sparkles size={16} />
-            <span>Trợ lý ảo Tư tưởng Hồ Chí Minh</span>
+        <div className="text-center mb-8 shrink-0">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-charcoal text-red-flag font-bold text-sm mb-4 shadow-[4px_4px_0px_0px_#1A1A1A]">
+            <Sparkles size={16} className="text-yellow-star fill-yellow-star" />
+            <span className="font-bungee">TRỢ LÝ ẢO • HCM202</span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-black font-display text-[var(--color-charcoal)] uppercase">
-            Hỏi đáp cùng <span className="text-[var(--color-red-flag)]">AI TÈO</span>
+          <h1 className="text-3xl md:text-5xl font-black font-display text-charcoal uppercase drop-shadow-sm flex items-center justify-center gap-3">
+            HỎI ĐÁP CÙNG <span className="text-red-flag underline decoration-4 underline-offset-4 decoration-yellow-star">AI TÈO</span>
           </h1>
         </div>
 
         {/* Chat Container */}
-        <div className="flex-1 bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 overflow-hidden flex flex-col relative">
-          
+        <div className="flex-1 bg-off-white border-4 border-charcoal shadow-[12px_12px_0px_0px_#1A1A1A] flex flex-col relative overflow-hidden">
+
+          {/* Decorative Header Bar */}
+          <div className="h-10 bg-charcoal flex items-center justify-between px-4 shrink-0">
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500 border border-white/20"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-400 border border-white/20"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500 border border-white/20"></div>
+            </div>
+            <div className="text-white/50 text-xs font-mono">CONSOLE_LOG_AI_CHAT.EXE</div>
+          </div>
+
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 md:p-6 scroll-smooth custom-scrollbar">
+          <div className="flex-1 overflow-y-auto p-6 md:p-8 scroll-smooth custom-scrollbar bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:16px_16px] [background-color:#fff]">
             <AnimatePresence>
               {chatHistory.map((msg, index) => (
                 <div key={index}>
@@ -149,32 +172,32 @@ const AIPage = () => {
           </div>
 
           {/* Input Area */}
-          <div className="p-4 bg-white/80 border-t border-gray-100 backdrop-blur-md shrink-0">
+          <div className="p-6 bg-beige-paper border-t-4 border-charcoal shrink-0">
             <form
               onSubmit={handleFormSubmit}
-              className="relative flex items-center gap-2 max-w-3xl mx-auto"
+              className="relative flex items-center gap-3 max-w-4xl mx-auto"
             >
               <input
                 ref={inputRef}
                 type="text"
                 disabled={isLoading}
-                placeholder="Ví dụ: Quan điểm về 'bỏ qua' chế độ tư bản chủ nghĩa là gì?"
-                className="w-full pl-6 pr-14 py-4 rounded-full bg-gray-50 border-2 border-gray-200 focus:border-[var(--color-red-flag)] focus:ring-2 focus:ring-[var(--color-red-flag)]/20 focus:outline-none transition-all font-body text-gray-700 shadow-inner disabled:opacity-60 disabled:cursor-not-allowed"
+                placeholder="Nhập câu hỏi của bạn tại đây..."
+                className="w-full pl-6 pr-16 py-4 bg-white border-2 border-charcoal font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:shadow-[4px_4px_0px_0px_#DA251D] focus:-translate-y-1 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
                 disabled={isLoading}
-                className="absolute right-2 p-2.5 bg-[var(--color-red-flag)] text-white rounded-full hover:bg-[#8B0000] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors shadow-md hover:shadow-lg active:scale-95 transform duration-150"
+                className="absolute right-3 p-2 bg-red-flag text-yellow-star border-2 border-charcoal hover:bg-brown-heritage disabled:bg-gray-400 disabled:border-gray-500 transition-colors shadow-sm active:translate-y-1 active:shadow-none"
               >
                 {isLoading ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
-                  <Send size={20} />
+                  <Send size={24} />
                 )}
               </button>
             </form>
-            <p className="text-center text-xs text-gray-400 mt-2 font-body italic">
-              AI có thể mắc lỗi. Hãy kiểm tra lại thông tin quan trọng.
+            <p className="text-center text-xs text-charcoal/60 mt-3 font-mono">
+              * AI có thể mắc lỗi. Hãy kiểm tra lại thông tin.
             </p>
           </div>
         </div>

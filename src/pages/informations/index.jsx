@@ -1,11 +1,11 @@
 import "./styles.css";
 import { motion } from "framer-motion";
-import { 
-  User, 
-  Crown, 
-  FileText, 
-  Video, 
-  Newspaper, 
+import {
+  User,
+  Crown,
+  FileText,
+  Video,
+  Newspaper,
   ExternalLink,
   BookOpen,
   Users,
@@ -87,78 +87,64 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-// Profile Card Component
+// Profile Card Component - "ID Card" Style
 const ProfileCard = ({ member, index }) => {
   const isLeader = member.role === "leader";
 
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ y: -5 }}
-      className={`group relative overflow-hidden rounded-3xl 
-        ${isLeader 
-          ? "bg-gradient-to-br from-[#DA251D]/10 to-[#FFCD00]/10 border-2 border-[#DA251D]/20" 
-          : "bg-white/80 border border-gray-200/60"
-        }
-        backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300`}
+      whileHover={{ y: -5, boxShadow: "8px 8px 0px 0px #1A1A1A" }}
+      className={`relative group bg-beige-paper border-4 border-charcoal overflow-hidden shadow-[4px_4px_0px_0px_#1A1A1A] transition-all duration-200
+        ${isLeader ? "bg-red-50" : "bg-white"}`}
     >
-      {/* Background Decoration */}
-      <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-30
-        ${isLeader ? "bg-[#DA251D]" : "bg-blue-500"}`} 
-      />
+      {/* ID Card Header Decoration */}
+      <div className="h-8 bg-charcoal w-full flex items-center justify-between px-3">
+        <div className="w-16 h-1 bg-white/20"></div>
+        <div className="text-white/50 text-[10px] font-mono tracking-widest">STUDENT_ID</div>
+      </div>
 
-      <div className="relative z-10 p-6 md:p-8">
-        {/* Header */}
-        <div className="flex items-start gap-5 mb-6">
-          {/* Avatar */}
-          <div className="relative flex-shrink-0">
-            <div className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden 
-              ${isLeader ? "ring-4 ring-[#FFCD00]/50" : "ring-2 ring-gray-200"}`}>
-              <img
-                src={member.gender === "male" ? maleAvatar : femaleAvatar}
-                alt={member.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {isLeader && (
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-[#DA251D] to-[#FFCD00] 
-                rounded-full flex items-center justify-center shadow-lg">
-                <Crown className="w-4 h-4 text-white" />
-              </div>
-            )}
+      <div className="p-6 relative">
+        {/* Leader Badge */}
+        {isLeader && (
+          <div className="absolute top-4 right-4 animate-pulse">
+            <Crown className="w-6 h-6 text-yellow-star fill-yellow-star drop-shadow-sm" />
           </div>
+        )}
 
-          {/* Info */}
-          <div className="flex-1 min-w-0">
-            <h3 className={`text-xl md:text-2xl font-bold mb-1 truncate
-              ${isLeader ? "text-[#DA251D]" : "text-gray-900"}`}>
+        {/* Avatar Section */}
+        <div className="flex gap-4 mb-4 pb-4 border-b-2 border-charcoal/10 border-dashed">
+          <div className="shrink-0 w-20 h-24 bg-gray-200 border-2 border-charcoal overflow-hidden relative">
+            <img
+              src={member.gender === "male" ? maleAvatar : femaleAvatar}
+              alt={member.name}
+              className="w-full h-full object-cover filter grayscale contrast-125"
+            />
+          </div>
+          <div>
+            <h3 className="font-bungee text-xl text-charcoal leading-none mb-1 uppercase">
               {member.name}
             </h3>
-            <p className="text-gray-500 font-mono text-sm mb-3">
+            <p className="font-mono text-xs text-charcoal/70 bg-gray-100 px-1 inline-block border border-gray-300">
               {member.studentCode}
             </p>
-            <span className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold
-              ${isLeader 
-                ? "bg-gradient-to-r from-[#DA251D] to-[#8B0000] text-white" 
-                : "bg-gray-100 text-gray-600"}`}>
-              {isLeader ? <Crown className="w-3 h-3" /> : <User className="w-3 h-3" />}
+            <div className={`mt-2 inline-flex items-center gap-1 px-2 py-1 border-2 border-charcoal text-[10px] font-bold uppercase
+                    ${isLeader ? "bg-red-flag text-white" : "bg-white text-charcoal"}`}>
               {isLeader ? "Trưởng nhóm" : "Thành viên"}
-            </span>
+            </div>
           </div>
         </div>
 
-        {/* Tasks */}
+        {/* Task Section */}
         <div>
-          <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-            <Sparkles className="w-3 h-3" />
-            Nhiệm vụ
+          <h4 className="font-bold text-xs uppercase text-charcoal/50 mb-2 flex items-center gap-1">
+            <Sparkles className="w-3 h-3" /> Nhiệm vụ:
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-1">
             {member.task.map((t, idx) => (
-              <li key={idx} className="flex items-start gap-3">
-                <span className={`flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2
-                  ${isLeader ? "bg-[#DA251D]" : "bg-blue-500"}`} />
-                <span className="text-sm text-gray-600 leading-relaxed">{t}</span>
+              <li key={idx} className="flex items-start gap-2 text-sm font-inter text-charcoal leading-tight">
+                <span className="mt-1 w-1.5 h-1.5 bg-red-flag square-full shrink-0"></span>
+                {t}
               </li>
             ))}
           </ul>
@@ -168,7 +154,7 @@ const ProfileCard = ({ member, index }) => {
   );
 };
 
-// Reference Card Component
+// Reference Card Component - "File Folder" Style
 const ReferenceCard = ({ reference, index }) => {
   const getIcon = (type) => {
     switch (type) {
@@ -178,40 +164,34 @@ const ReferenceCard = ({ reference, index }) => {
     }
   };
 
-  const getColors = (type) => {
-    switch (type) {
-      case "video": return { bg: "bg-red-50", text: "text-red-600", border: "border-red-200" };
-      case "document": return { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200" };
-      default: return { bg: "bg-green-50", text: "text-green-600", border: "border-green-200" };
-    }
-  };
-
   const Icon = getIcon(reference.type);
-  const colors = getColors(reference.type);
 
   return (
     <motion.a
       variants={cardVariants}
-      whileHover={{ scale: 1.02, y: -3 }}
+      whileHover={{ y: -4, boxShadow: "6px 6px 0px 0px #1A1A1A" }}
+      whileTap={{ y: 0, boxShadow: "0px 0px 0px 0px #1A1A1A" }}
       href={reference.link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group block p-5 rounded-2xl bg-white border ${colors.border}
-        hover:shadow-xl transition-all duration-300`}
+      className="block bg-white border-2 border-charcoal shadow-[3px_3px_0px_0px_#1A1A1A] transition-all relative group h-full"
     >
-      <div className="flex items-start gap-4">
-        <div className={`flex-shrink-0 w-12 h-12 rounded-xl ${colors.bg} ${colors.text}
-          flex items-center justify-center group-hover:scale-110 transition-transform`}>
-          <Icon className="w-6 h-6" />
-        </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#DA251D] transition-colors line-clamp-2">
-            {reference.title}
-          </h3>
-          <span className={`inline-flex items-center gap-1 text-sm ${colors.text}`}>
-            Xem chi tiết
-            <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-          </span>
+      {/* Folder Tab */}
+      <div className="absolute -top-3 left-0 bg-charcoal text-white text-[10px] font-bold px-3 py-0.5 border-2 border-charcoal h-4 flex items-center uppercase">
+        REF_0{index + 1}
+      </div>
+
+      <div className="p-5 pt-7 flex flex-col h-full">
+        <h3 className="font-bold font-inter text-charcoal group-hover:text-red-flag transition-colors mb-2 line-clamp-2 min-h-[3rem]">
+          {reference.title}
+        </h3>
+
+        <div className="mt-auto flex items-center justify-between border-t-2 border-charcoal/10 pt-3">
+          <div className="flex items-center gap-2 text-xs font-mono text-charcoal/60 uppercase">
+            <Icon className="w-4 h-4" />
+            {reference.type}
+          </div>
+          <ExternalLink className="w-4 h-4 text-charcoal group-hover:rotate-45 transition-transform" />
         </div>
       </div>
     </motion.a>
@@ -222,48 +202,50 @@ export default function InformationsPage() {
   return (
     <div
       id="informations_page"
-      className="w-full min-h-dvh bg-gradient-to-br from-[#FAFAF8] to-[#F5F5DC] py-16 px-4 md:px-8 lg:px-16 pt-28"
+      className="w-full min-h-dvh bg-beige-paper py-16 px-4 md:px-8 lg:px-16 pt-28"
     >
+      {/* Background Grid */}
+      <div className="fixed inset-0 pointer-events-none opacity-5 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:32px_32px] z-0"></div>
+
       {/* Hero Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-7xl mx-auto mb-16"
+        className="max-w-7xl mx-auto mb-16 relative z-10"
       >
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200/60 mb-4">
-            <BookOpen className="w-4 h-4 text-[#DA251D]" />
-            <span className="text-sm font-medium text-gray-600">Thông tin dự án</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1 bg-white border-2 border-charcoal shadow-[4px_4px_0px_0px_#1A1A1A] mb-4">
+            <BookOpen className="w-4 h-4 text-red-flag" />
+            <span className="text-sm font-bold text-charcoal uppercase tracking-wider">Hồ sơ dự án</span>
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bungee text-[#1A1A1A] tracking-tight">
-            Quá độ lên CNXH ở Việt Nam
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bungee text-charcoal tracking-tight drop-shadow-sm">
+            QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI
           </h1>
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-inter">
-            Nghiên cứu tư tưởng Hồ Chí Minh về con đường quá độ lên chủ nghĩa xã hội, 
+          <p className="text-base md:text-xl text-charcoal/80 max-w-3xl mx-auto leading-relaxed font-inter font-medium border-l-4 border-red-flag pl-4 text-justify md:text-center">
+            Nghiên cứu tư tưởng Hồ Chí Minh về con đường quá độ lên chủ nghĩa xã hội,
             lý giải khái niệm "bỏ qua chế độ tư bản chủ nghĩa" và vận dụng trong phát triển hiện nay.
           </p>
         </div>
       </motion.div>
 
       {/* Team Section */}
-      <div className="max-w-7xl mx-auto mb-20">
-        <div className="mb-10 flex items-center gap-4">
-          <div className="p-3 rounded-2xl bg-gradient-to-r from-[#DA251D] to-[#8B0000]">
+      <div className="max-w-7xl mx-auto mb-20 relative z-10">
+        <div className="mb-10 flex items-center gap-4 border-b-4 border-charcoal pb-4">
+          <div className="p-3 bg-red-flag border-2 border-charcoal shadow-[4px_4px_0px_0px_#1A1A1A]">
             <Users className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h2 className="text-2xl md:text-3xl font-bungee text-[#1A1A1A]">
-              Thành viên nhóm
+            <h2 className="text-2xl md:text-3xl font-bungee text-charcoal">
+              NHÂN SỰ DỰ ÁN
             </h2>
-            <p className="text-gray-500 text-sm">Đội ngũ thực hiện dự án</p>
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {member.map((m, index) => (
             <ProfileCard key={index} member={m} index={index} />
@@ -272,24 +254,23 @@ export default function InformationsPage() {
       </div>
 
       {/* References Section */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="mb-10 flex items-center gap-4">
-          <div className="p-3 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600">
-            <FileText className="w-6 h-6 text-white" />
+      <div className="max-w-7xl mx-auto mb-16 relative z-10">
+        <div className="mb-10 flex items-center gap-4 border-b-4 border-charcoal pb-4">
+          <div className="p-3 bg-yellow-star border-2 border-charcoal shadow-[4px_4px_0px_0px_#1A1A1A]">
+            <FileText className="w-6 h-6 text-charcoal" />
           </div>
           <div>
-            <h2 className="text-2xl md:text-3xl font-bungee text-[#1A1A1A]">
-              Tài liệu tham khảo
+            <h2 className="text-2xl md:text-3xl font-bungee text-charcoal">
+              TÀI LIỆU THAM KHẢO
             </h2>
-            <p className="text-gray-500 text-sm">Nguồn tài liệu chính thống</p>
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {references.map((ref, index) => (
             <ReferenceCard key={index} reference={ref} index={index} />
@@ -298,15 +279,15 @@ export default function InformationsPage() {
       </div>
 
       {/* Footer Note */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="max-w-7xl mx-auto text-center"
+        className="max-w-7xl mx-auto text-center relative z-10"
       >
-        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/60 backdrop-blur-sm border border-gray-200/60">
-          <span className="text-gray-500 text-sm">
-            Dự án phục vụ học tập môn Tư tưởng Hồ Chí Minh – FPT University
+        <div className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-charcoal border-dashed">
+          <span className="text-charcoal text-sm font-mono">
+           // PROJECT_HCM202_FPT_UNIVERSITY
           </span>
         </div>
       </motion.div>

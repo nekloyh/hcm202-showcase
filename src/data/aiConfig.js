@@ -1,7 +1,7 @@
 export const AI_CONFIG = {
   provider: "groq", // Provider chính: Groq, backup: Gemini
-  groqApiKey: import.meta.env.VITE_GROQ_API_KEY,
-  geminiApiKey: import.meta.env.VITE_GEMINI_API_KEY,
+  groqApiKey: import.meta.env.GROQ_API_KEY,
+  geminiApiKey: import.meta.env.GEMINI_API_KEY,
   systemPrompt: `
 Bạn là "Tèo" – trợ lý ảo chuyên về tư tưởng Hồ Chí Minh, đặc biệt về CHỦ NGHĨA XÃ HỘI và CON ĐƯỜNG QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI Ở VIỆT NAM.
 

@@ -171,7 +171,8 @@ const HomePage = () => {
             {[
               { id: "nav_1", num: "01", text: "CHỦ NGHĨA XÃ HỘI", path: "/chu-nghia-xa-hoi" },
               { id: "nav_2", num: "02", text: "THỜI KÌ QUÁ ĐỘ TẠI VIỆT NAM", path: "/thoi-ki-qua-do" },
-              { id: "nav_3", num: "03", text: "TRỢ LÝ AI TRA CỨU", path: "/ai-chatbot" }
+              { id: "nav_3", num: "03", text: "VIDEO PODCAST", path: "/video-podcast" },
+              { id: "nav_4", num: "04", text: "TRỢ LÝ AI TRA CỨU", path: "/ai-chatbot" }
             ].map((item, index) => (
               <motion.div
                 key={item.id}

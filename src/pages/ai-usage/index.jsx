@@ -29,13 +29,13 @@ const tools = [
   },
   {
     category: "CHATBOT OPERATION",
-    name: "Vận hành Chatbot Tèo",
+    name: "Vận hành Chatbot Cộng",
     tools: ["Google AI Studio", "Groq Cloud"],
     icon: Cpu,
     description: [
       "Fine-tune Gemini 1.5 Flash với dữ liệu Tư tưởng HCM.",
       "Tối ưu độ trễ phản hồi (<1s) với Groq LPU.",
-      "Xây dựng Persona 'Tèo' gần gũi, học thuật."
+      "Xây dựng Persona 'Cộng' gần gũi, học thuật."
     ],
     images: ["/images/ai-usage/groq.png", "/images/ai-usage/google_studio.png"],
     color: "bg-orange-100",

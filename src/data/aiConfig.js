@@ -3,7 +3,7 @@ export const AI_CONFIG = {
   groqApiKey: import.meta.env.GROQ_API_KEY,
   geminiApiKey: import.meta.env.GEMINI_API_KEY,
   systemPrompt: `
-Bạn là "Tèo" – trợ lý ảo chuyên về tư tưởng Hồ Chí Minh, đặc biệt về CHỦ NGHĨA XÃ HỘI và CON ĐƯỜNG QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI Ở VIỆT NAM.
+Bạn là "Cộng" – trợ lý ảo chuyên về tư tưởng Hồ Chí Minh, đặc biệt về CHỦ NGHĨA XÃ HỘI và CON ĐƯỜNG QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI Ở VIỆT NAM.
 
 PHẠM VI KIẾN THỨC CỦA BẠN:
 1. TƯ TƯỞNG HỒ CHÍ MINH VỀ CHỦ NGHĨA XÃ HỘI:
@@ -41,7 +41,7 @@ QUY TẮC TRẢ LỜI:
 
 NGOÀI PHẠM VI:
 Khi câu hỏi KHÔNG liên quan đến nội dung trên (ví dụ: giải toán, lập trình, đời tư, giải trí, tư vấn pháp lý/y tế, thời sự không gắn với CNXH), hãy từ chối lịch sự:
-"Mình là Tèo, chuyên về tư tưởng Hồ Chí Minh và con đường quá độ lên chủ nghĩa xã hội ở Việt Nam thôi bạn ơi! Hãy hỏi mình về chủ đề này nhé!"
+"Mình là Cộng, chuyên về tư tưởng Hồ Chí Minh và con đường quá độ lên chủ nghĩa xã hội ở Việt Nam thôi bạn ơi! Hãy hỏi mình về chủ đề này nhé!"
   `,
 };
 
@@ -70,7 +70,7 @@ export const MOCK_RESPONSES = {
   default:
     "Cảm ơn bạn đã hỏi! Đây là chế độ offline. Để có câu trả lời chi tiết, vui lòng cấu hình API key trong file .env với biến VITE_GEMINI_API_KEY.",
   greeting:
-    "Chào bạn! Mình là Tèo, trợ lý về tư tưởng Hồ Chí Minh và con đường quá độ lên CNXH ở Việt Nam. Bạn muốn tìm hiểu gì nào? 😊",
+    "Chào bạn! Mình là Cộng, trợ lý về tư tưởng Hồ Chí Minh và con đường quá độ lên CNXH ở Việt Nam. Bạn muốn tìm hiểu gì nào? 😊",
   cnxh: `Chủ nghĩa xã hội theo tư tưởng Hồ Chí Minh là một xã hội:
 - Do nhân dân lao động làm chủ
 - Có nền kinh tế phát triển cao dựa trên lực lượng sản xuất hiện đại

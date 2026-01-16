@@ -85,8 +85,10 @@ const SocialismPage = () => {
   const targetRef = useRef(null);
 
   return (
-    <div ref={targetRef} className="min-h-screen bg-beige-paper overflow-hidden pt-20">
-
+    <div
+      ref={targetRef}
+      className="min-h-screen bg-beige-paper overflow-hidden pt-20"
+    >
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 md:px-8 bg-grid-pattern border-b-4 border-charcoal">
         <div className="max-w-6xl w-full text-center relative z-10">
@@ -96,7 +98,7 @@ const SocialismPage = () => {
             className="inline-flex items-center gap-3 px-6 py-2 bg-charcoal text-yellow-star font-mono text-sm mb-6 border-2 border-yellow-star shadow-[4px_4px_0px_0px_#DA251D]"
           >
             <Sparkles size={16} />
-            <span>MANIFESTO_2026.EXE</span>
+            <span>SOCIALISM</span>
           </motion.div>
 
           <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-black font-display text-charcoal leading-[0.85] tracking-tighter uppercase mb-8">
@@ -109,7 +111,11 @@ const SocialismPage = () => {
             <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-yellow-star border-2 border-charcoal"></div>
 
             <p className="font-serif-accent text-2xl md:text-3xl text-charcoal/90 italic leading-relaxed">
-              "Không chỉ là một lý thuyết, đó là <span className="text-red-flag font-bold underline decoration-4 decoration-yellow-star">giai đoạn tất yếu</span> của sự phát triển loài người để hướng tới tự do và hạnh phúc."
+              "Không chỉ là một lý thuyết, đó là{" "}
+              <span className="text-red-flag font-bold underline decoration-4 decoration-yellow-star">
+                giai đoạn tất yếu
+              </span>{" "}
+              của sự phát triển loài người để hướng tới tự do và hạnh phúc."
             </p>
           </div>
         </div>
@@ -123,7 +129,11 @@ const SocialismPage = () => {
 
       {/* 2. PERSPECTIVES (4 GÓC ĐỘ) */}
       <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-        <SectionHeading number="01" subtitle="TIẾP CẬN TOÀN DIỆN" title="4 GÓC ĐỘ CƠ BẢN" />
+        <SectionHeading
+          number="01"
+          subtitle="TIẾP CẬN TOÀN DIỆN"
+          title="4 GÓC ĐỘ CƠ BẢN"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card
@@ -161,11 +171,16 @@ const SocialismPage = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bungee text-white mb-2">DÒNG CHẢY LỊCH SỬ</h2>
-              <p className="font-mono text-yellow-star">THE_FLOW_OF_TIME // 5_STAGES</p>
+              <h2 className="text-4xl md:text-5xl font-bungee text-white mb-2">
+                DÒNG CHẢY LỊCH SỬ
+              </h2>
+              <p className="font-mono text-yellow-star">
+                THE_FLOW_OF_TIME // 5_STAGES
+              </p>
             </div>
             <div className="hidden md:block text-right max-w-xs text-sm text-gray-400">
-              Lịch sử loài người là lịch sử thay thế các hình thái kinh tế - xã hội (thấp đến cao).
+              Lịch sử loài người là lịch sử thay thế các hình thái kinh tế - xã
+              hội (thấp đến cao).
             </div>
           </div>
 
@@ -176,7 +191,9 @@ const SocialismPage = () => {
             <TimelineItem number="04" title="Tư Bản (CNTB)" />
             <div className="flex-1 min-w-[150px] relative px-4">
               <div className="bg-red-flag text-yellow-star border-2 border-white p-4 text-center shadow-[4px_4px_0px_0px_#FFF] transform scale-110">
-                <div className="font-mono text-xs mb-1 animate-pulse">LOADING...</div>
+                <div className="font-mono text-xs mb-1 animate-pulse">
+                  LOADING...
+                </div>
                 <div className="font-bungee text-lg">CHỦ NGHĨA XÃ HỘI</div>
               </div>
               <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/30 -z-10"></div>
@@ -189,7 +206,11 @@ const SocialismPage = () => {
               <Clock size={18} /> THỜI KỲ QUÁ ĐỘ LÀ GÌ?
             </h4>
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              Giữa xã hội tư bản chủ nghĩa và xã hội cộng sản chủ nghĩa là một thời kỳ <span className="text-white font-bold">cải biến cách mạng</span>. Thời kỳ này chính là "Thời kỳ quá độ", khi cái cũ chưa mất đi hẳn và cái mới đang dần hình thành.
+              Giữa xã hội tư bản chủ nghĩa và xã hội cộng sản chủ nghĩa là một
+              thời kỳ{" "}
+              <span className="text-white font-bold">cải biến cách mạng</span>.
+              Thời kỳ này chính là "Thời kỳ quá độ", khi cái cũ chưa mất đi hẳn
+              và cái mới đang dần hình thành.
             </p>
           </div>
         </div>
@@ -197,14 +218,22 @@ const SocialismPage = () => {
 
       {/* 4. CONDITIONS FOR BIRTH */}
       <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto border-b-4 border-charcoal">
-        <SectionHeading number="02" subtitle="ĐIỀU KIỆN RA ĐỜI" title="TÍNH TẤT YẾU LỊCH SỬ" />
+        <SectionHeading
+          number="02"
+          subtitle="ĐIỀU KIỆN RA ĐỜI"
+          title="TÍNH TẤT YẾU LỊCH SỬ"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Economic Conditions */}
           <div className="bg-white p-8 border-l-4 border-red-flag shadow-lg">
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-red-flag text-yellow-star rounded-full"><Zap size={24} /></div>
-              <h3 className="font-bungee text-2xl text-charcoal">ĐIỀU KIỆN KINH TẾ</h3>
+              <div className="p-3 bg-red-flag text-yellow-star rounded-full">
+                <Zap size={24} />
+              </div>
+              <h3 className="font-bungee text-2xl text-charcoal">
+                ĐIỀU KIỆN KINH TẾ
+              </h3>
             </div>
             <div className="font-inter text-charcoal/80 space-y-4">
               <p>Mâu thuẫn cơ bản của chủ nghĩa tư bản ngày càng gay gắt:</p>
@@ -219,25 +248,38 @@ const SocialismPage = () => {
                   <span>(Chiếm hữu tư nhân)</span>
                 </div>
               </div>
-              <p className="italic text-sm">&rarr; Quan hệ sản xuất TBCN trở thành xiềng xích kìm hãm sự phát triển, đòi hỏi phải bị phá bỏ.</p>
+              <p className="italic text-sm">
+                &rarr; Quan hệ sản xuất TBCN trở thành xiềng xích kìm hãm sự
+                phát triển, đòi hỏi phải bị phá bỏ.
+              </p>
             </div>
           </div>
 
           {/* Political Conditions */}
           <div className="bg-charcoal p-8 border-l-4 border-yellow-star shadow-lg text-white">
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 bg-yellow-star text-charcoal rounded-full"><Users size={24} /></div>
-              <h3 className="font-bungee text-2xl text-yellow-star">ĐIỀU KIỆN CHÍNH TRỊ</h3>
+              <div className="p-3 bg-yellow-star text-charcoal rounded-full">
+                <Users size={24} />
+              </div>
+              <h3 className="font-bungee text-2xl text-yellow-star">
+                ĐIỀU KIỆN CHÍNH TRỊ
+              </h3>
             </div>
             <div className="font-inter text-white/80 space-y-4">
               <ul className="space-y-4">
                 <li className="flex gap-3">
                   <span className="font-bold text-yellow-star">01.</span>
-                  <span><strong>Giai cấp công nhân:</strong> Phát triển mạnh về số lượng và chất lượng (có ý thức tổ chức, kỷ luật cao).</span>
+                  <span>
+                    <strong>Giai cấp công nhân:</strong> Phát triển mạnh về số
+                    lượng và chất lượng (có ý thức tổ chức, kỷ luật cao).
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="font-bold text-yellow-star">02.</span>
-                  <span><strong>Đảng Cộng Sản ra đời:</strong> Là nhân tố quyết định, trang bị lý luận cách mạng khoa học.</span>
+                  <span>
+                    <strong>Đảng Cộng Sản ra đời:</strong> Là nhân tố quyết
+                    định, trang bị lý luận cách mạng khoa học.
+                  </span>
                 </li>
               </ul>
               <div className="p-4 bg-white/10 border-2 border-white/30 font-bold text-white text-sm mt-4 text-center">
@@ -250,7 +292,11 @@ const SocialismPage = () => {
 
       {/* 5. 6 FEATURES (6 ĐẶC TRƯNG) */}
       <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-        <SectionHeading number="03" subtitle="BẢN CHẤT" title="6 ĐẶC TRƯNG CƠ BẢN" />
+        <SectionHeading
+          number="03"
+          subtitle="BẢN CHẤT"
+          title="6 ĐẶC TRƯNG CƠ BẢN"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
           <FeatureBento
@@ -303,7 +349,6 @@ const SocialismPage = () => {
           </a>
         </div>
       </section>
-
     </div>
   );
 };

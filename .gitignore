@@ -18,4 +18,6 @@ dist-ssr
 .env
 .env.local
 
+*.mp4
+
 ws.code-workspace

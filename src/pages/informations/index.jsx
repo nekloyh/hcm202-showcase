@@ -13,45 +13,46 @@ import {
 } from "lucide-react";
 
 const maleAvatar = "/images/user/male.png";
-const femaleAvatar = "/images/user/female.png";
 
 const member = [
   {
-    name: "Nguyễn Văn A",
-    studentCode: "SE181234",
+    name: "Nguyễn Vũ Bằng",
+    studentCode: "SE180590",
     role: "leader",
     gender: "male",
     task: [
-      'Chủ biên dàn ý lý luận: quá độ lên CNXH, "bỏ qua CNTB"',
       "Điều phối tiến độ, rà soát học thuật",
-      "Tổng hợp nguồn văn kiện, giáo trình",
+      "Quay, dựng và chỉnh sửa video Podcast",
     ],
   },
   {
-    name: "Nguyễn Văn A",
-    studentCode: "SE181234",
-    role: "member",
-    gender: "male",
-    task: ["Thiết kế & cập nhật website", "Tích hợp chatbot AI và hạ tầng API"],
-  },
-  {
-    name: "Nguyễn Văn A",
-    studentCode: "SE181234",
+    name: "Nguyễn Lý Minh Kỳ",
+    studentCode: "SE181748",
     role: "member",
     gender: "male",
     task: [
-      "Thu thập tư liệu thực tiễn, số liệu an sinh – kinh tế",
-      "Biên tập nội dung vận dụng hiện nay",
+      "Thiết kế & xây dựng website", 
+      "Tích hợp chatbot AI và hạ tầng API"
     ],
   },
   {
-    name: "Nguyễn Văn A",
-    studentCode: "SE181234",
+    name: "Đặng Quốc Tuân",
+    studentCode: "SE171801",
     role: "member",
     gender: "male",
     task: [
+      "Thu thập tư liệu , số liệu cho trang web",
+      "Biên tập nội dung thuyết trình",
+    ],
+  },
+  {
+    name: "Lê Quốc Bảo",
+    studentCode: "SS170194",
+    role: "member",
+    gender: "male",
+    task: [
+      "Hỗ trợ xây dựng nội dung trang web",
       "Đối chiếu nguồn chính thống, kiểm chứng trích dẫn",
-      "Hỗ trợ xây dựng kịch bản câu hỏi cho chatbot",
     ],
   },
 ];

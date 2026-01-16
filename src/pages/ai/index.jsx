@@ -30,7 +30,7 @@ const AIResponse = ({ text }) => {
         <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-charcoal"></div>
         <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-charcoal"></div>
 
-        <h4 className="font-bungee text-red-flag text-sm mb-2 uppercase tracking-wide">AI TÈO</h4>
+        <h4 className="font-bungee text-red-flag text-sm mb-2 uppercase tracking-wide">AI Cộng</h4>
         <div className="ai-markdown text-charcoal font-body leading-relaxed">
           <ReactMarkdown>{text}</ReactMarkdown>
         </div>
@@ -67,7 +67,7 @@ const AIPage = () => {
   const [chatHistory, setChatHistory] = useState([
     {
       role: "ai",
-      text: `Chào bạn, mình là Tèo. Mình hỗ trợ giải thích tư tưởng Hồ Chí Minh về con đường quá độ lên chủ nghĩa xã hội ở Việt Nam, đặc biệt khái niệm "bỏ qua chế độ tư bản chủ nghĩa". Bạn muốn tìm hiểu gì hôm nay?`,
+      text: `Chào bạn, mình là Cộng. Mình hỗ trợ giải thích tư tưởng Hồ Chí Minh về con đường quá độ lên chủ nghĩa xã hội ở Việt Nam, đặc biệt khái niệm "bỏ qua chế độ tư bản chủ nghĩa". Bạn muốn tìm hiểu gì hôm nay?`,
     },
   ]);
   const inputRef = useRef();
@@ -122,7 +122,7 @@ const AIPage = () => {
         const newHistory = prev.filter(msg => !msg.isLoading);
         return [...newHistory, {
           role: "ai",
-          text: "Xin lỗi, Tèo đang gặp chút sự cố kết nối. Bạn thử lại sau nhé!",
+          text: "Xin lỗi, Cộng đang gặp chút sự cố kết nối. Bạn thử lại sau nhé!",
         }];
       });
     } finally {
@@ -141,7 +141,7 @@ const AIPage = () => {
             <span className="font-bungee">TRỢ LÝ ẢO • HCM202</span>
           </div>
           <h1 className="text-3xl md:text-5xl font-black font-display text-charcoal uppercase drop-shadow-sm flex items-center justify-center gap-3">
-            HỎI ĐÁP CÙNG <span className="text-red-flag underline decoration-4 underline-offset-4 decoration-yellow-star">AI TÈO</span>
+            HỎI ĐÁP CÙNG <span className="text-red-flag underline decoration-4 underline-offset-4 decoration-yellow-star">AI Cộng</span>
           </h1>
         </div>
 

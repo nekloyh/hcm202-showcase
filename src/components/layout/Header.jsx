@@ -22,6 +22,7 @@ export default function Header() {
     { name: "Trang chủ", icon: "Home", path: "/" },
     { name: "Chủ nghĩa Xã hội", icon: "Star", path: "/chu-nghia-xa-hoi" },
     { name: "Thời kì quá độ", icon: "Plane", path: "/thoi-ki-qua-do" },
+    { name: "Video Podcast", icon: "Video", path: "/video-podcast" },
     { name: "Trợ lý ảo", icon: "MessageSquare", path: "/ai-chatbot" },
     { name: "Hướng dẫn AI", icon: "Book", path: "/ai-usage" },
     { name: "Thông tin dự án", icon: "Info", path: "/informations" },

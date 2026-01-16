@@ -46,7 +46,7 @@ const HomePage = () => {
               <img
                 src="/images/home/frame1_1.png"
                 alt="Bác Hồ"
-                className="w-[120%] h-auto object-cover transform translate-y-10 group-hover:scale-105 transition-transform duration-700"
+                className="w-[140%] h-auto object-cover transform translate-y-10 group-hover:scale-105 transition-transform duration-700"
               />
             </motion.div>
 
@@ -66,7 +66,7 @@ const HomePage = () => {
               <p className="font-inter font-medium text-charcoal text-base lg:text-xl leading-relaxed">
                 "Tư tưởng của <span className="text-red-flag font-bold">Đường Kách Mệnh</span>. vẫn còn nguyên giá trị, và chúng ta còn phải tiếp tục học tập, khai thác, phát huy, vận dụng sáng tạo vào điều kiện hiện nay. Những luận điểm tuy cơ bản nhưng đúng và đến bây giờ vẫn đúng."
               </p>
-              <p className="font-bungee text-right text-charcoal/50 text-xs lg:text-sm mt-4">HCM202 PROJECT</p>
+              <p className="font-bungee text-right text-charcoal/50 text-xs lg:text-sm mt-4">NGUYÊN TỔNG BÍ THƯ<br/>NGUYỄN PHÚ TRỌNG</p>
             </motion.div>
 
             {/* Block 4: Revolution Image - Bottom Right */}

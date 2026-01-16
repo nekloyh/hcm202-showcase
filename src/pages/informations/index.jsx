@@ -22,7 +22,7 @@ const member = [
     gender: "male",
     task: [
       "Điều phối tiến độ, rà soát học thuật",
-      "Quay, dựng và chỉnh sửa video Podcast",
+      "Quay, dựng và chỉnh sửa podcast",
     ],
   },
   {
@@ -41,7 +41,7 @@ const member = [
     role: "member",
     gender: "male",
     task: [
-      "Thu thập tư liệu , số liệu cho trang web",
+      "Thu thập tư liệu, số liệu cho website",
       "Biên tập nội dung thuyết trình",
     ],
   },
@@ -51,7 +51,7 @@ const member = [
     role: "member",
     gender: "male",
     task: [
-      "Hỗ trợ xây dựng nội dung trang web",
+      "Hỗ trợ xây dựng nội dung website",
       "Đối chiếu nguồn chính thống, kiểm chứng trích dẫn",
     ],
   },
@@ -64,14 +64,14 @@ const references = [
     link: "https://moet.gov.vn/content/vanban/Lists/VBDH/Attachments/2729/GT%20h%E1%BB%8Dc%20ph%E1%BA%A7n%20T%C6%B0%20t%C6%B0%E1%BB%9Fng%20HCM%20(K)%20Tr69%20-Tr141.pdf",
   },
   {
-    title: "Văn kiện Đại hội XIII của Đảng (tổng hợp)",
-    type: "document",
-    link: "https://daihoi13.dangcongsan.vn/van-kien",
+    title: "Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên CNXH (2011)",
+    type: "article",
+    link: "https://tulieuvankien.dangcongsan.vn/ban-chap-hanh-trung-uong-dang/dai-hoi-dang/lan-thu-xi/cuong-linh-xay-dung-dat-nuoc-trong-thoi-ky-qua-do-len-chu-nghia-xa-hoi-bo-sung-phat-trien-nam-2011-1528",
   },
   {
-    title: "Bài nghiên cứu: Kinh tế thị trường định hướng XHCN – Tạp chí Lý luận Chính trị",
-    type: "article",
-    link: "https://lyluanchinhtri.vn/",
+    title: "Đường Kách Mệnh",
+    type: "document",
+    link: "https://cdn.thuvienphapluat.vn/uploads/Hoidapphapluat/2024/NTH/06122024/T%C3%A1c%20ph%E1%BA%A9m%20%C4%90%C6%B0%E1%BB%9Dng%20K%C3%A1ch%20M%E1%BB%87nh.pdf",
   },
 ];
 

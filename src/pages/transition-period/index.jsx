@@ -121,7 +121,6 @@ const features = [
 const TransitionPeriodPage = () => {
   return (
     <div className="w-full min-h-screen bg-off-white overflow-x-hidden pt-20">
-
       {/* 1. HERO SECTION: "CÚ NHẢY LỊCH SỬ" */}
       <section className="relative w-full h-[85vh] flex flex-col items-center justify-center p-4 lg:p-10 border-b-4 border-charcoal bg-grid-pattern">
         {/* Background Overlay */}
@@ -131,22 +130,27 @@ const TransitionPeriodPage = () => {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-center z-10 space-y-4"
+          className="text-center z-10 space-y-6"
         >
-          <div className="inline-block px-4 py-2 bg-yellow-star border-2 border-charcoal shadow-[4px_4px_0px_0px_#1A1A1A] mb-4">
-            <span className="font-mono text-sm uppercase font-bold tracking-widest text-charcoal">
-              Neo-Socialism Era
+          <div className="inline-block px-6 py-3 bg-yellow-star border-2 border-charcoal shadow-[4px_4px_0px_0px_#1A1A1A] mb-6">
+            <span className="font-mono text-base md:text-lg uppercase font-bold tracking-widest text-charcoal">
+              The transition to socialism
             </span>
           </div>
 
-          <h1 className="font-bungee text-6xl lg:text-8xl text-red-flag uppercase leading-[0.9] drop-shadow-xl">
-            THỜI KỲ<br />
+          <h1 className="font-bungee text-6xl md:text-8xl lg:text-[9rem] text-red-flag uppercase leading-[0.85] drop-shadow-xl mb-8">
+            THỜI KỲ
+            <br />
             <span className="text-charcoal text-stroke-red">QUÁ ĐỘ</span>
           </h1>
 
-          <div className="w-full max-w-2xl mx-auto mt-6 bg-white border-4 border-charcoal p-6 shadow-[8px_8px_0px_0px_#1A1A1A] rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
-            <p className="font-serif-accent italic text-2xl lg:text-3xl text-charcoal leading-relaxed">
-              "Không phải đường tắt, mà là <span className="text-red-flag font-black bg-yellow-star/30 px-1">lối đi tắt đón đầu</span> của lịch sử."
+          <div className="w-full max-w-3xl mx-auto mt-8 bg-white border-4 border-charcoal p-8 md:p-10 shadow-[10px_10px_0px_0px_#1A1A1A] rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+            <p className="font-serif-accent italic text-2xl md:text-3xl lg:text-4xl text-charcoal leading-relaxed">
+              "Không phải đường tắt, mà là{" "}
+              <span className="text-red-flag font-black bg-yellow-star/30 px-1">
+                lối đi tắt đón đầu
+              </span>{" "}
+              của lịch sử."
             </p>
           </div>
         </motion.div>
@@ -163,7 +167,6 @@ const TransitionPeriodPage = () => {
 
       {/* 2. INTRO: THE HOOK & CONTEXT */}
       <section className="w-full max-w-7xl mx-auto py-20 px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
         {/* Left: Text Content */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -177,11 +180,13 @@ const TransitionPeriodPage = () => {
           <div className="h-2 w-32 bg-red-flag mb-6"></div>
 
           <p className="font-inter text-lg text-charcoal/80 leading-relaxed text-justify">
-            Sau Cách mạng Tháng 8 (1945), Việt Nam có xuất phát điểm rất thấp: kinh tế nông nghiệp lạc hậu, hậu quả chiến tranh nặng nề.
-            Các con đường cứu nước trước đó (Phong kiến, Tiểu tư sản) đều bế tắc.
+            Sau Cách mạng Tháng 8 (1945), Việt Nam có xuất phát điểm rất thấp:
+            kinh tế nông nghiệp lạc hậu, hậu quả chiến tranh nặng nề. Các con
+            đường cứu nước trước đó (Phong kiến, Tiểu tư sản) đều bế tắc.
           </p>
           <p className="font-inter text-lg text-charcoal font-bold bg-yellow-star/20 p-4 border-l-4 border-red-flag">
-            👉 Chỉ có đi lên Chủ nghĩa Xã hội mới là "lựa chọn tất yếu" để giải phóng dân tộc thực sự và phát triển bền vững.
+            Chỉ có đi lên Chủ nghĩa Xã hội mới là "lựa chọn tất yếu" để giải
+            phóng dân tộc thực sự và phát triển bền vững.
           </p>
         </motion.div>
 
@@ -196,8 +201,12 @@ const TransitionPeriodPage = () => {
           <div className="absolute inset-0 bg-charcoal clip-path-polygon"></div>
           <div className="absolute inset-4 border-4 border-white flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1533658590680-362544278482?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center grayscale contrast-125 border-charcoal shadow-[12px_12px_0px_0px_#DA251D]">
             <div className="bg-black/60 p-6 text-center backdrop-blur-sm">
-              <span className="font-bungee text-yellow-star text-2xl block">1945 - Nay</span>
-              <span className="font-inter text-white text-sm">Hành trình lột xác</span>
+              <span className="font-bungee text-yellow-star text-2xl block">
+                1945 - Nay
+              </span>
+              <span className="font-inter text-white text-sm">
+                Hành trình lột xác
+              </span>
             </div>
           </div>
         </motion.div>
@@ -207,9 +216,12 @@ const TransitionPeriodPage = () => {
       <section className="w-full bg-cream border-y-4 border-charcoal py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-bungee text-4xl lg:text-6xl text-charcoal">GIẢI MÃ "BỎ QUA"</h2>
+            <h2 className="font-bungee text-4xl lg:text-6xl text-charcoal">
+              GIẢI MÃ "BỎ QUA"
+            </h2>
             <p className="font-inter text-xl mt-4 max-w-2xl mx-auto">
-              "Bỏ qua" chế độ Tư bản chủ nghĩa không phải là phủ định sạch trơn, mà là sự kế thừa biện chứng (Aufheben).
+              "Bỏ qua" chế độ Tư bản chủ nghĩa không phải là phủ định sạch trơn,
+              mà là sự kế thừa biện chứng (Aufheben).
             </p>
           </div>
 
@@ -219,12 +231,21 @@ const TransitionPeriodPage = () => {
               whileHover={{ scale: 1.02 }}
               className={`${comparisonData.skip.bg} ${comparisonData.skip.text} border-4 border-charcoal p-8 shadow-[12px_12px_0px_0px_#DA251D] relative overflow-hidden`}
             >
-              <div className="absolute top-0 right-0 p-4 text-9xl font-black opacity-10 select-none">XXX</div>
-              <h3 className="font-bungee text-4xl mb-2">{comparisonData.skip.title}</h3>
-              <p className="font-serif-accent italic text-xl mb-6 opacity-80">{comparisonData.skip.description}</p>
+              <div className="absolute top-0 right-0 p-4 text-9xl font-black opacity-10 select-none">
+                XXX
+              </div>
+              <h3 className="font-bungee text-4xl mb-2">
+                {comparisonData.skip.title}
+              </h3>
+              <p className="font-serif-accent italic text-xl mb-6 opacity-80">
+                {comparisonData.skip.description}
+              </p>
               <ul className="space-y-4">
-                {comparisonData.skip.items.map(item => (
-                  <li key={item} className="flex items-center gap-3 font-bold text-lg">
+                {comparisonData.skip.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 font-bold text-lg"
+                  >
                     <span className="block w-2 h-2 bg-red-flag rounded-full"></span>
                     {item}
                   </li>
@@ -237,12 +258,21 @@ const TransitionPeriodPage = () => {
               whileHover={{ scale: 1.02 }}
               className={`${comparisonData.keep.bg} ${comparisonData.keep.text} border-4 border-charcoal p-8 shadow-[12px_12px_0px_0px_#1A1A1A] relative overflow-hidden`}
             >
-              <div className="absolute top-0 right-0 p-4 text-9xl font-black text-green-500 opacity-10 select-none">VVV</div>
-              <h3 className="font-bungee text-4xl mb-2">{comparisonData.keep.title}</h3>
-              <p className="font-serif-accent italic text-xl mb-6 opacity-80">{comparisonData.keep.description}</p>
+              <div className="absolute top-0 right-0 p-4 text-9xl font-black text-green-500 opacity-10 select-none">
+                VVV
+              </div>
+              <h3 className="font-bungee text-4xl mb-2">
+                {comparisonData.keep.title}
+              </h3>
+              <p className="font-serif-accent italic text-xl mb-6 opacity-80">
+                {comparisonData.keep.description}
+              </p>
               <ul className="space-y-4">
-                {comparisonData.keep.items.map(item => (
-                  <li key={item} className="flex items-center gap-3 font-bold text-lg">
+                {comparisonData.keep.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 font-bold text-lg"
+                  >
                     <span className="block w-2 h-2 bg-green-500 rounded-full"></span>
                     {item}
                   </li>
@@ -256,10 +286,12 @@ const TransitionPeriodPage = () => {
       {/* 4. THE BLUEPRINT: BENTO GRID (EXPANDED) */}
       <section className="w-full max-w-7xl mx-auto py-24 px-4 lg:px-10">
         <h2 className="font-bungee text-4xl lg:text-6xl text-charcoal mb-4 text-center">
-          <span className="bg-red-flag text-white px-2">BẢN THIẾT KẾ</span> XÃ HỘI
+          <span className="bg-red-flag text-white px-2">BẢN THIẾT KẾ</span> XÃ
+          HỘI
         </h2>
         <p className="text-center text-charcoal/60 mb-12 font-inter max-w-2xl mx-auto">
-          Những phương hướng và nhiệm vụ trọng tâm để xây dựng đất nước trong thời kỳ quá độ (Theo Văn kiện Đại hội Đảng).
+          Những phương hướng và nhiệm vụ trọng tâm để xây dựng đất nước trong
+          thời kỳ quá độ (Theo Văn kiện Đại hội Đảng).
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -272,25 +304,31 @@ const TransitionPeriodPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className={`${feat.bg} ${feat.text || 'text-charcoal'} ${feat.border} border-4 p-6 shadow-bento hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-none transition-all duration-200 cursor-default group h-full`}
+                className={`${feat.bg} ${feat.text || "text-charcoal"} ${feat.border} border-4 p-6 shadow-bento hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-none transition-all duration-200 cursor-default group h-full`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="p-3 bg-white/20 rounded-lg border-2 border-current">
                     <Icon size={32} />
                   </div>
-                  <span className="font-bungee text-4xl opacity-20">0{idx + 1}</span>
+                  <span className="font-bungee text-4xl opacity-20">
+                    0{idx + 1}
+                  </span>
                 </div>
                 <h3 className="font-bungee text-2xl mb-4 group-hover:underline decoration-4 decoration-current underline-offset-4">
                   {feat.title}
                 </h3>
                 {/* Bullet Points added here */}
                 <ul className="space-y-2 mt-4">
-                  {feat.items && feat.items.map((item, i) => (
-                    <li key={i} className="flex gap-2 text-sm font-inter opacity-90 leading-snug">
-                      <span className="font-bold">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                  {feat.items &&
+                    feat.items.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-2 text-base font-inter opacity-90 leading-snug"
+                      >
+                        <span className="font-bold">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                 </ul>
               </motion.div>
             );
@@ -303,13 +341,16 @@ const TransitionPeriodPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
             <div className="text-left">
-              <div className="bg-charcoal text-yellow-star inline-block px-3 py-1 font-mono text-sm mb-2">VĂN KIỆN ĐẠI HỘI XII</div>
+              <div className="bg-charcoal text-yellow-star inline-block px-3 py-1 font-mono text-sm mb-2">
+                VĂN KIỆN ĐẠI HỘI XII
+              </div>
               <h2 className="font-bungee text-4xl lg:text-5xl text-charcoal">
                 9 MỐI QUAN HỆ LỚN
               </h2>
             </div>
             <div className="md:w-1/2 text-charcoal/70 font-inter text-sm md:text-base border-l-4 border-red-flag pl-4">
-              Đây là những vấn đề biện chứng cốt lõi cần giải quyết để đảm bảo sự phát triển hài hòa, bền vững của đất nước.
+              Đây là những vấn đề biện chứng cốt lõi cần giải quyết để đảm bảo
+              sự phát triển hài hòa, bền vững của đất nước.
             </div>
           </div>
 
@@ -323,15 +364,19 @@ const TransitionPeriodPage = () => {
               "Xây dựng CNXH và bảo vệ Tổ quốc",
               "Độc lập, tự chủ và hội nhập quốc tế",
               "Đảng lãnh đạo, Nhà nước quản lý, Nhân dân làm chủ",
-              "Nhà nước, thị trường và xã hội"
+              "Nhà nước, thị trường và xã hội",
             ].map((rel, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 className="bg-off-white border-2 border-charcoal p-4 flex items-center gap-4 shadow-[4px_4px_0px_0px_#1A1A1A]"
               >
-                <div className="font-bungee text-red-flag text-xl">0{i + 1}</div>
-                <div className="font-bold text-charcoal text-sm uppercase">{rel}</div>
+                <div className="font-bungee text-red-flag text-xl">
+                  0{i + 1}
+                </div>
+                <div className="font-bold text-charcoal text-base uppercase">
+                  {rel}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -346,21 +391,36 @@ const TransitionPeriodPage = () => {
             KHÁT VỌNG 2045
           </h2>
           <p className="font-inter text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed opacity-90">
-            "Đến giữa thế kỷ XXI, nước ta trở thành <span className="text-red-flag bg-yellow-star px-2 font-bold text-shadow-sm">nước phát triển, theo định hướng xã hội chủ nghĩa</span>."
+            "Đến giữa thế kỷ XXI, nước ta trở thành{" "}
+            <span className="text-red-flag bg-yellow-star px-2 font-bold text-shadow-sm">
+              nước phát triển, theo định hướng xã hội chủ nghĩa
+            </span>
+            ."
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20">
             <div className="p-4 border border-white/20 rounded hover:bg-white/5 transition-colors">
               <h4 className="font-bungee text-red-flag text-xl mb-2">2025</h4>
-              <p className="text-sm">Nước đang phát triển, công nghiệp theo hướng hiện đại</p>
+              <p className="text-sm">
+                Nước đang phát triển, công nghiệp theo hướng hiện đại
+              </p>
             </div>
             <div className="p-4 border border-white/20 rounded hover:bg-white/5 transition-colors">
               <h4 className="font-bungee text-red-flag text-xl mb-2">2030</h4>
-              <p className="text-sm">Nước đang phát triển, công nghiệp hiện đại, thu nhập trung bình cao</p>
+              <p className="text-sm">
+                Nước đang phát triển, công nghiệp hiện đại, thu nhập trung bình
+                cao
+              </p>
             </div>
             <div className="p-4 border-2 border-yellow-star bg-white/10 rounded transform scale-105">
-              <h4 className="font-bungee text-yellow-star text-2xl mb-2">2045</h4>
-              <p className="font-bold text-base">Nước phát triển,<br />thu nhập cao</p>
+              <h4 className="font-bungee text-yellow-star text-2xl mb-2">
+                2045
+              </h4>
+              <p className="font-bold text-base">
+                Nước phát triển,
+                <br />
+                thu nhập cao
+              </p>
             </div>
           </div>
         </div>
